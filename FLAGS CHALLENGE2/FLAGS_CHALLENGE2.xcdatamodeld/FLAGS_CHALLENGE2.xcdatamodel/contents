@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountriesItems" representedClassName="CountriesItems" syncable="YES">
+        <attribute name="country_name" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="questionlist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Questions" inverseName="countrylist" inverseEntity="Questions"/>
+    </entity>
+    <entity name="Questions" representedClassName="Questions" syncable="YES">
+        <attribute name="answer_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="country_code" optional="YES" attributeType="String"/>
+        <attribute name="country_flag" optional="YES" attributeType="String"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="selectionStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="userAnser_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="viewStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="countrylist" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountriesItems" inverseName="questionlist" inverseEntity="CountriesItems"/>
+    </entity>
+    <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
+        <attribute name="playStatus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="totalScore" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+</model>
